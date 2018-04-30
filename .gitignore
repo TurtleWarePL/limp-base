@@ -2,6 +2,13 @@
 server/conf/settings.py
 *.py[cod]
 
+# SSH/SSL
+server/ssh-private.key
+server/ssh-public.key
+server/ssl-public.key
+server/ssl.cert
+server/ssl.key
+
 # C extensions
 *.so
 
