@@ -8,9 +8,10 @@ creation commands.
 
 """
 from evennia import DefaultCharacter
+from evennia.contrib.rpsystem import ContribRPCharacter
+from typeclasses.objects import Object
 
-
-class Character(DefaultCharacter):
+class Character(ContribRPCharacter, Object):
     """
     The Character defaults to reimplementing some of base Object's hook methods with the
     following functionality:
