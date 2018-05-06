@@ -161,4 +161,16 @@ class Object(ContribRPObject):
                                  object speaks
 
      """
-    pass
+
+    def which_room(self):
+        """
+        Get the room (not the same as location) this object is in, if any.
+        """
+        from typeclasses.rooms import Room
+        
+        it = self
+        while not isinstance(it, Room):
+            it = it.location
+            if it is None:
+                break
+        return it
