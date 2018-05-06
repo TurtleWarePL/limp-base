@@ -19,6 +19,7 @@ class Phone(Object):
         self.cmdset.add(PhoneCmdSet, permanent=True)
         self.locks.add("puppet:false()")
         self.add_to_list()
+        #self.db.connection = None
 
     #TODO: can we somehow generate it dynamically rather than always call update?
     def update_desc(self):
@@ -30,6 +31,7 @@ class Phone(Object):
 
     def at_init(self):
         self.add_to_list()
+        self.connection = None
 
     def add_to_list(self):
         self.used_numbers[self.db.number] = self
